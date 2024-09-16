@@ -1,10 +1,5 @@
-if [ ! -f /etc/passwd ]; then
-  echo "O arquivo /etc/passwd não foi encontrado."
-  exit 1
-fi
+#!/bin/bash
 
-cut -d':' -f1,5 /etc/passwd | while IFS=: read -r usuario Eduardo_freitas; do
-  echo -e "${duzin}\t${Eduardo_freitas}"
-done
-
+# Extrai o nome de usuário (campo 1) e o nome completo (campo 5) do arquivo /etc/passwd
+cut -d':' -f1,5 /etc/passwd | tr ':' '\t'
 

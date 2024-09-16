@@ -1,6 +1,4 @@
-if [ ! -f /etc/passwd ]; then
-  echo "O arquivo /etc/passwd não foi encontrado."
-  exit 1
-fi
+#!/bin/bash
 
+# Extrai o último campo (shell) do arquivo /etc/passwd, remove duplicatas e exibe
 cut -d':' -f7 /etc/passwd | sort | uniq
